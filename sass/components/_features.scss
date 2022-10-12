@@ -1,0 +1,44 @@
+.features {
+	@extend %page-container;
+	padding-bottom: 47px;
+
+	&__container {
+		@extend %content-container;
+	}
+
+	&__list {
+		display: flex;
+		gap: 30px;
+	}
+
+	&__item {
+		width: 270px;
+	}
+
+	&__icon {
+		width: 270px;
+		height: 120px;
+		padding: 25px 100px;
+		margin-bottom: 30px;
+		border-radius: 4px;
+
+		background-color: var(--sec-background-color);
+	}
+
+	&__label {
+		margin-bottom: 10px;
+
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.14;
+		text-transform: uppercase;
+
+		color: var(--text-main-color);
+	}
+
+	&__description {
+		line-height: 1.71;
+
+		color: var(--paragraph-color);
+	}
+}
