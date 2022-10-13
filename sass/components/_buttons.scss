@@ -1,8 +1,12 @@
+.page-header__nav-btn {
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
 .hero__btn {
 	@extend %btn;
-	padding: 10px 32px;
-	width: unset;
-	background-image: none;
 	&:hover,
 	&:focus {
 		background-color: var(--btn-background-color);
@@ -12,8 +16,6 @@
 .contact__btn {
 	@extend %btn;
 	position: relative;
-	width: 200px;
-	height: 50px;
 	padding: 10px 62px 10px 28px;
 	&:hover,
 	&:focus {
@@ -23,6 +25,7 @@
 
 .projects__btn-filter {
 	@extend %btn;
+	width: unset;
 	padding: 6px 22px;
 	font-weight: 500;
 	line-height: 1.62;
