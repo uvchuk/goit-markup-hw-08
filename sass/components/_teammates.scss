@@ -1,12 +1,25 @@
 .teammates {
+	@extend %section;
+	background-color: var(--scnd-bcgd);
 	&__container {
 		@extend %container;
+
+		text-align: center;
 	}
 
 	&__title {
+		font-weight: 700;
+		font-size: 28px;
+		line-height: 1.18;
 	}
 
 	&__list {
+		margin-top: 30px;
+		display: flex;
+		gap: 30px;
+		@include mobile {
+			flex-direction: column;
+		}
 	}
 
 	&__item {
@@ -21,15 +34,17 @@
 	&__position {
 	}
 
-	&__soc-list {
-	}
+	&__soc {
+		&-list {
+		}
 
-	&__soc-item {
-	}
+		&-item {
+		}
 
-	&__soc-link {
-	}
+		&-link {
+		}
 
-	&__soc-icon {
+		&-icon {
+		}
 	}
 }

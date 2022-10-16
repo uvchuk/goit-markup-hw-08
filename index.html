@@ -19,7 +19,7 @@
 		<header class="page-header">
 			<div class="page-header__container">
 				<a href="./index.html" class="page-header__logo"><span class="logo-label">Web</span>Studio</a>
-				<nav class="page-header__nav" data-menu>
+				<nav class="page-header__menu" data-menu>
 					<ul class="page-header__nav-list">
 						<li class="page-header__nav-item">
 							<a href="./index.html" class="page-header__nav-link --current">Студія</a>
@@ -52,11 +52,11 @@
 						<li class="page-header__social-item"><a href="#" class="page-header__social-link">LinkedIn</a></li>
 					</ul>
 				</nav>
-				<button class="page-header__nav-btn" type="button" data-menu-button>
-					<svg class="page-header__nav-icon-open" width="24" height="16">
+				<button class="page-header__menu-btn" type="button" data-menu-button>
+					<svg class="page-header__menu-icon-open" width="24" height="16">
 						<use href="./images/icons.svg#icon-menu_open"></use>
 					</svg>
-					<svg class="page-header__nav-icon-close" width="18" height="18">
+					<svg class="page-header__menu-icon-close" width="18" height="18">
 						<use href="./images/icons.svg#icon-menu_close"></use>
 					</svg>
 				</button>
@@ -133,7 +133,31 @@
 					<h2 class="teammates__title">Наша команда</h2>
 					<ul class="teammates__list">
 						<li class="teammates__item">
-							<img src="images/colegue1.jpg" width="270" alt="Член команди №1" />
+							<picture>
+								<source
+									srcset="
+										./images/teammates/teammate-1w270.webp 270w,
+										./images/teammates/teammate-1w354.webp 354w,
+										./images/teammates/teammate-1w450.webp 450w,
+										./images/teammates/teammate-1w708.webp 708w,
+										./images/teammates/teammate-1w900.webp 900w
+									"
+									sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, (min-width: 450px) 450px, 100vw"
+									type="image/webp"
+								/>
+								<source
+									srcset="
+										./images/teammates/teammate-1w270.jpg 270w,
+										./images/teammates/teammate-1w354.jpg 354w,
+										./images/teammates/teammate-1w450.jpg 450w,
+										./images/teammates/teammate-1w708.jpg 708w,
+										./images/teammates/teammate-1w900.jpg 900w
+									"
+									sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, (min-width: 450px) 450px, 100vw"
+									type="image/jpeg"
+								/>
+								<img src="./images/teammates/teammate-1w450.jpg" alt="Colegue 1" />
+							</picture>
 							<div class="teammates__info">
 								<h3 class="teammates__name">Ігор Дем'яненко</h3>
 								<p class="teammates__position">Product Designer</p>
@@ -170,7 +194,31 @@
 							</div>
 						</li>
 						<li class="teammates__item">
-							<img src="images/colegue2.jpg" width="270" alt="Член команди №2" />
+							<picture>
+								<source
+									srcset="
+										./images/teammates/teammate-2w270.webp 270w,
+										./images/teammates/teammate-2w354.webp 354w,
+										./images/teammates/teammate-2w450.webp 450w,
+										./images/teammates/teammate-2w708.webp 708w,
+										./images/teammates/teammate-2w900.webp 900w
+									"
+									sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, (min-width: 450px) 450px, 100vw"
+									type="image/webp"
+								/>
+								<source
+									srcset="
+										./images/teammates/teammate-2w270.jpg 270w,
+										./images/teammates/teammate-2w354.jpg 354w,
+										./images/teammates/teammate-2w450.jpg 450w,
+										./images/teammates/teammate-2w708.jpg 708w,
+										./images/teammates/teammate-2w900.jpg 900w
+									"
+									sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, (min-width: 450px) 450px, 100vw"
+									type="image/jpeg"
+								/>
+								<img src="./images/teammates/teammate-2w450.jpg" alt="Colegue 2" />
+							</picture>
 							<div class="teammates__info">
 								<h3 class="teammates__name">Ольга Рєпіна</h3>
 								<p class="teammates__position">Frontend Developer</p>
@@ -207,7 +255,31 @@
 							</div>
 						</li>
 						<li class="teammates__item">
-							<img src="images/colegue3.jpg" width="270" alt="Член команди №3" />
+							<picture>
+								<source
+									srcset="
+										./images/teammates/teammate-3w270.webp 270w,
+										./images/teammates/teammate-3w354.webp 354w,
+										./images/teammates/teammate-3w450.webp 450w,
+										./images/teammates/teammate-3w708.webp 708w,
+										./images/teammates/teammate-3w900.webp 900w
+									"
+									sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, (min-width: 450px) 450px, 100vw"
+									type="image/webp"
+								/>
+								<source
+									srcset="
+										./images/teammates/teammate-3w270.jpg 270w,
+										./images/teammates/teammate-3w354.jpg 354w,
+										./images/teammates/teammate-3w450.jpg 450w,
+										./images/teammates/teammate-3w708.jpg 708w,
+										./images/teammates/teammate-3w900.jpg 900w
+									"
+									sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, (min-width: 450px) 450px, 100vw"
+									type="image/jpeg"
+								/>
+								<img src="./images/teammates/teammate-3w450.jpg" alt="Colegue 3" />
+							</picture>
 							<div class="teammates__info">
 								<h3 class="teammates__name">Микола Тарасов</h3>
 								<p class="teammates__position">Marketing</p>
@@ -244,7 +316,31 @@
 							</div>
 						</li>
 						<li class="teammates__item">
-							<img src="images/colegue4.jpg" width="270" alt="Член команди №4" />
+							<picture>
+								<source
+									srcset="
+										./images/teammates/teammate-4w270.webp 270w,
+										./images/teammates/teammate-4w354.webp 354w,
+										./images/teammates/teammate-4w450.webp 450w,
+										./images/teammates/teammate-4w708.webp 708w,
+										./images/teammates/teammate-4w900.webp 900w
+									"
+									sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, (min-width: 450px) 450px, 100vw"
+									type="image/webp"
+								/>
+								<source
+									srcset="
+										./images/teammates/teammate-4w270.jpg 270w,
+										./images/teammates/teammate-4w354.jpg 354w,
+										./images/teammates/teammate-4w450.jpg 450w,
+										./images/teammates/teammate-4w708.jpg 708w,
+										./images/teammates/teammate-4w900.jpg 900w
+									"
+									sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, (min-width: 450px) 450px, 100vw"
+									type="image/jpeg"
+								/>
+								<img src="./images/teammates/teammate-4w450.jpg" alt="Colegue 4" />
+							</picture>
 							<div class="teammates__info">
 								<h3 class="teammates__name">Михайло Єрмаков</h3>
 								<p class="teammates__position">UI Designer</p>

@@ -1,6 +1,9 @@
 .page-header {
 	&__container {
 		@extend %container;
+		@include mobile {
+			border-bottom: 1px solid var(--prim-border);
+		}
 		display: flex;
 		justify-content: space-between;
 	}
@@ -13,17 +16,17 @@
 		}
 	}
 
-	&__nav {
+	&__menu {
 		@include mobile {
 			display: none;
 		}
 
 		&.is-open {
 			@include mobile {
-				display: flex;
-				flex-direction: column;
 				visibility: visible;
 				overflow: auto;
+				display: flex;
+				flex-direction: column;
 				width: stretch;
 				height: calc(100% - 96px);
 				padding: 48px 40px;
@@ -34,6 +37,55 @@
 			}
 		}
 
+		&-btn {
+			display: none;
+			@include mobile {
+				display: block;
+				visibility: visible;
+				border: none;
+				background-color: transparent;
+				padding: 0;
+			}
+		}
+
+		&-icon-open {
+			@include mobile {
+				padding: 12px 8px;
+			}
+			.page-header__menu-btn:hover &,
+			.page-header__menu-btn:focus & {
+				fill: var(--accent);
+			}
+		}
+
+		&-icon-close {
+			@include mobile {
+				display: none;
+				padding: 11px 11px;
+			}
+			.page-header__menu-btn:hover &,
+			.page-header__menu-btn:focus & {
+				fill: var(--accent);
+			}
+		}
+
+		&-btn.is-open &-icon-open {
+			@include mobile {
+				display: none;
+			}
+		}
+
+		&-btn.is-open &-icon-close {
+			@include mobile {
+				display: inline;
+				position: absolute;
+				top: 10px;
+				right: 15px;
+			}
+		}
+	}
+
+	&__nav {
 		&-list {
 			display: flex;
 			@include mobile {
@@ -60,117 +112,80 @@
 		&-link:focus {
 			color: var(--focus);
 		}
-
-		&-btn {
-			display: none;
-			@include mobile {
-				display: block;
-				visibility: visible;
-				border: none;
-				background-color: transparent;
-				padding: 0;
-			}
-		}
-
-		&-icon-open {
-			@include mobile {
-				padding: 12px 8px;
-			}
-		}
-
-		&-icon-close {
-			@include mobile {
-				display: none;
-				padding: 11px 11px;
-			}
-		}
-
-		&-btn.is-open &-icon-open {
-			@include mobile {
-				display: none;
-			}
-		}
-
-		&-btn.is-open &-icon-close {
-			@include mobile {
-				display: inline;
-				position: absolute;
-				top: 10px;
-				right: 15px;
-			}
-		}
 	}
 
-	&__contact-list {
-		display: flex;
-		@include mobile {
-			flex-direction: column-reverse;
-			gap: 32px;
-			margin-top: auto;
-		}
-	}
-
-	&__contact-item {
-		@include mobile {
-			font-weight: 500;
-			letter-spacing: 0.02em;
-
-			&:first-child {
-				font-size: 24px;
-				line-height: 1.17;
-				color: var(--scnd-text);
-			}
-
-			&:last-child {
-				font-size: 34px;
-				line-height: 1.18;
-				color: var(--accent);
-			}
-		}
-	}
-
-	&__contact-link {
-		&:hover,
-		&:focus {
-			color: var(--focus);
-		}
-	}
-
-	&__contact-icon {
-		@include mobile {
-			display: none;
-		}
-	}
-
-	&__social-list {
-		display: none;
-		@include mobile {
+	&__contact {
+		&-list {
 			display: flex;
-			flex-wrap: wrap;
-			gap: 10px;
-			margin-top: 64px;
+			@include mobile {
+				flex-direction: column-reverse;
+				gap: 32px;
+				margin-top: auto;
+			}
 		}
-	}
 
-	&__social-item {
-		@include mobile {
-			font-weight: 500;
-			font-size: 18px;
-			line-height: 1.22;
-			letter-spacing: 0.02em;
-			color: var(--accent);
+		&-item {
+			@include mobile {
+				font-weight: 500;
+				letter-spacing: 0.02em;
 
-			&:not(:last-child)::after {
-				content: "";
-				border: 1px solid rgba(33, 33, 33, 0.2);
-				transform: rotate(90deg);
-				margin-left: 10px;
+				&:first-child {
+					font-size: 24px;
+					line-height: 1.17;
+					color: var(--scnd-text);
+				}
+
+				&:last-child {
+					font-size: 34px;
+					line-height: 1.18;
+					color: var(--accent);
+				}
+			}
+		}
+
+		&-link {
+			&:hover,
+			&:focus {
+				color: var(--focus);
+			}
+		}
+
+		&-icon {
+			@include mobile {
+				display: none;
 			}
 		}
 	}
 
-	&__social-link {
-		@include mobile {
+	&__social {
+		&-list {
+			display: none;
+			@include mobile {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-top: 64px;
+			}
+		}
+
+		&-item {
+			@include mobile {
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 1.22;
+				letter-spacing: 0.02em;
+				color: var(--accent);
+
+				&:not(:last-child)::after {
+					content: "";
+					border: 1px solid rgba(33, 33, 33, 0.2);
+					transform: rotate(90deg);
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&-link {
 			&:focus,
 			&:hover {
 				color: var(--focus);

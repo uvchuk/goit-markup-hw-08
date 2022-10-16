@@ -1,4 +1,8 @@
 .our-jobs {
+	@include mobile {
+		display: none;
+	}
+
 	&__container {
 		@extend %container;
 	}
