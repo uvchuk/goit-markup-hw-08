@@ -1,9 +1,20 @@
 body {
 	font-family: "Roboto", sans-serif;
+	font-style: normal;
 	font-size: 14px;
 	letter-spacing: 0.03em;
-	color: var(--text-main-color);
-	background-color: var(--page-main-color);
+	color: var(--prim-text);
+	background-color: var(--prim-bcgd);
+}
+
+body.locked {
+	overflow: hidden;
+	visibility: hidden;
+	// lock scroll in iOS Safari
+	position: fixed;
+	width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 h1,
@@ -34,5 +45,5 @@ a {
 }
 
 .logo-label {
-	color: var(--accent-color);
+	color: var(--accent);
 }

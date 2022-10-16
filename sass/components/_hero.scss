@@ -1,0 +1,11 @@
+.hero {
+	&__container {
+		@extend %container;
+	}
+
+	&__title {
+	}
+
+	&__btn {
+	}
+}

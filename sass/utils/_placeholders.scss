@@ -3,6 +3,15 @@
 	margin-right: auto;
 	padding-left: 15px;
 	padding-right: 15px;
+	@include mobile {
+		max-width: 450px;
+	}
+	@include tablet {
+		max-width: 738px;
+	}
+	@include desktop {
+		max-width: 1170px;
+	}
 }
 
 %logo {
@@ -11,7 +20,7 @@
 	font-weight: 700;
 	font-size: 24px;
 	line-height: 1.17;
-	text-decoration: none;
+	color: var(--prim-text);
 }
 
 %btn {
@@ -26,8 +35,8 @@
 	border-color: transparent;
 	border-radius: 4px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-	color: var(--page-main-color);
-	background-color: var(--accent-color);
+	color: var(--prim-bcgd);
+	background-color: var(--accent);
 	cursor: pointer;
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -1,17 +1,18 @@
 :root {
-	--accent-color: #2196f3;
-	--focus-color: #188ce8;
-	--first-text-color: #212121;
-	--second-text-color: #757575;
-	--first-bcgd-color: #ffffff;
-	--second-bcgd-color: #f5f4fa;
-	--third-bcgd-color: #2f303a;
-	--fourth-bcgd-color: #c4c4c4;
-	--fifth-bcgd-color: rgba(47, 48, 58, 0.8);
-	--first-border-color: #ececec;
-	--second-border-color: #eeeeee;
-	--logo-color: #000000;
-	--contact-color: rgba(255, 255, 255, 0.6);
-	--icon-color: #afb1b8;
+	// Colors
+	--accent: #2196f3;
+	--focus: #188ce8;
+	--prim-text: #212121;
+	--scnd-text: #757575;
+	--prim-bcgd: #ffffff;
+	--scnd-bcgd: #f5f4fa;
+	--tert-bcgd: #2f303a;
+	--quat-bcgd: #c4c4c4;
+	--fifth-bcgd: rgba(47, 48, 58, 0.8);
+	--prim-border: #ececec;
+	--scnd-border: #eeeeee;
+	// --logo: #000000;
+	--contact: rgba(255, 255, 255, 0.6);
+	--icon: #afb1b8;
 	--icon-bcgd: rgba(255, 255, 255, 0.1);
 }
