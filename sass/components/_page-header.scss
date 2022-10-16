@@ -1,9 +1,6 @@
 .page-header {
 	&__container {
 		@extend %container;
-		@include mobile {
-			position: relative;
-		}
 		display: flex;
 		justify-content: space-between;
 	}
@@ -26,8 +23,9 @@
 				display: flex;
 				flex-direction: column;
 				visibility: visible;
+				overflow: auto;
 				width: stretch;
-				height: calc(100vh - 96px);
+				height: calc(100% - 96px);
 				padding: 48px 40px;
 				position: absolute;
 				top: 0;
@@ -41,6 +39,7 @@
 			@include mobile {
 				flex-direction: column;
 				gap: 32px;
+				margin-bottom: 32px;
 			}
 		}
 

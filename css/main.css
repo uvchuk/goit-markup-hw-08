@@ -15,6 +15,37 @@
   --icon-bcgd: rgba(255, 255, 255, 0.1);
 }
 
+.backdrop, .page-footer__container, .clients__container, .teammates__container, .our-jobs__container, .features__container, .hero__container, .page-header__container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media screen and (max-width: 767px) {
+  .backdrop, .page-footer__container, .clients__container, .teammates__container, .our-jobs__container, .features__container, .hero__container, .page-header__container {
+    max-width: 450px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .backdrop, .page-footer__container, .clients__container, .teammates__container, .our-jobs__container, .features__container, .hero__container, .page-header__container {
+    max-width: 738px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .backdrop, .page-footer__container, .clients__container, .teammates__container, .our-jobs__container, .features__container, .hero__container, .page-header__container {
+    max-width: 1170px;
+  }
+}
+
+.page-header__logo {
+  display: inline-block;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.17;
+  color: var(--prim-text);
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -24,16 +55,19 @@ body {
   background-color: var(--prim-bcgd);
 }
 
-body.locked {
-  overflow: hidden;
-  visibility: hidden;
-  position: fixed;
-  width: 100%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+@media screen and (max-width: 767px) {
+  body.locked {
+    overflow: hidden;
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    max-width: 480px;
+    height: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
 }
-
 h1,
 h2,
 h3,
@@ -79,37 +113,6 @@ a {
   overflow: hidden;
 }
 
-.backdrop, .page-footer__container, .clients__container, .teammates__container, .our-jobs__container, .features__container, .hero__container, .page-header__container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media screen and (max-width: 767px) {
-  .backdrop, .page-footer__container, .clients__container, .teammates__container, .our-jobs__container, .features__container, .hero__container, .page-header__container {
-    max-width: 450px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .backdrop, .page-footer__container, .clients__container, .teammates__container, .our-jobs__container, .features__container, .hero__container, .page-header__container {
-    max-width: 738px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .backdrop, .page-footer__container, .clients__container, .teammates__container, .our-jobs__container, .features__container, .hero__container, .page-header__container {
-    max-width: 1170px;
-  }
-}
-
-.page-header__logo {
-  display: inline-block;
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.17;
-  color: var(--prim-text);
-}
-
 .page-header__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,11 +120,6 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-@media screen and (max-width: 767px) {
-  .page-header__container {
-    position: relative;
-  }
 }
 @media screen and (max-width: 767px) {
   .page-header__logo {
@@ -144,10 +142,11 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
     visibility: visible;
+    overflow: auto;
     width: -webkit-fill-available;
     width: -moz-available;
     width: stretch;
-    height: calc(100vh - 96px);
+    height: calc(100% - 96px);
     padding: 48px 40px;
     position: absolute;
     top: 0;
@@ -167,6 +166,7 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 32px;
+    margin-bottom: 32px;
   }
 }
 @media screen and (max-width: 767px) {
