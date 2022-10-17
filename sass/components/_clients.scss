@@ -1,20 +1,53 @@
 .clients {
+	@extend %section;
+
 	&__container {
 		@extend %container;
+		text-align: center;
 	}
 
 	&__title {
+		font-weight: 700;
+		font-size: 28px;
+		line-height: 1.18;
 	}
 
 	&__list {
+		margin-top: 30px;
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+		flex-wrap: wrap;
 	}
 
 	&__item {
+		box-sizing: border-box;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid var(--icon);
+		border-radius: 4px;
+		width: 100%;
+		@include mobile {
+			height: 92px;
+			max-width: 210px;
+		}
+		&:hover,
+		&:focus {
+			border-color: var(--accent);
+		}
+		&:hover .clients__logo,
+		&:focus .clients__logo {
+			fill: var(--accent);
+		}
 	}
 
 	&__link {
+		display: block;
 	}
 
 	&__logo {
+		display: block;
+		fill: var(--icon);
 	}
 }

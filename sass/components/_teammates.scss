@@ -23,28 +23,56 @@
 	}
 
 	&__item {
+		@extend %team-bcgd;
 	}
 
 	&__info {
+		padding-top: 30px;
+		padding-bottom: 24px;
 	}
 
 	&__name {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.19;
 	}
 
 	&__position {
+		margin-top: 10px;
+		font-size: 16px;
+		line-height: 1.19;
+		color: var(--scnd-text);
 	}
 
 	&__soc {
 		&-list {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			margin-top: 16px;
 		}
 
 		&-item {
+			border-radius: 50%;
+			overflow: hidden;
 		}
 
 		&-link {
+			display: block;
+			padding: 12px;
+			&:hover,
+			&:focus {
+				background-color: var(--accent);
+			}
+			&:hover .teammates__soc-icon,
+			&:focus .teammates__soc-icon {
+				fill: var(--prim-bcgd);
+			}
 		}
 
 		&-icon {
+			display: block;
+			fill: var(--icon);
 		}
 	}
 }

@@ -1,60 +1,136 @@
 .page-footer {
+	@extend %section;
+	background-color: var(--footer-bcgd);
+
 	&__container {
 		@extend %container;
+		@include mobile {
+			text-align: center;
+		}
 	}
 
 	&__logo {
+		@extend %logo;
+		color: var(--prim-bcgd);
 	}
 }
+
 .address {
-	&__wrapper {
-	}
+	margin-top: 20px;
 
 	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
 	}
 
 	&__item {
+		font-weight: 400;
+		font-style: normal;
+		line-height: 1.71;
 	}
 
 	&__link {
+		color: var(--prim-bcgd);
+		&:hover,
+		&:focus {
+			color: var(--accent);
+		}
 	}
 
 	&__contact {
+		color: var(--contact);
+		&:hover,
+		&:focus {
+			color: var(--accent);
+		}
 	}
 }
-.logo {
-}
-.logo-label {
-}
+
 .connect {
+	@include mobile {
+		margin-top: 60px;
+	}
+
 	&__title {
+		font-weight: 700;
+		line-height: 1.14;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		color: var(--prim-bcgd);
 	}
 
 	&__list {
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+		gap: 10px;
 	}
 
 	&__item {
+		overflow: hidden;
+		border-radius: 50%;
+		background-color: var(--icon-bcgd);
 	}
 
 	&__link {
+		display: block;
+		padding: 12px;
+		&:hover,
+		&:focus {
+			background-color: var(--accent);
+		}
 	}
 
 	&__icon {
+		display: block;
+		fill: var(--prim-bcgd);
 	}
 }
 .contact {
 	&__form {
+		@include mobile {
+			margin-top: 60px;
+		}
 	}
 
 	&__label {
+		font-weight: 700;
+		line-height: 1.14;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		color: var(--prim-bcgd);
 	}
 
 	&__input {
+		@extend %input-bcgd;
+		height: 50px;
+		width: 100%;
+		padding-left: 16px;
+		font-size: 16px;
+		line-height: 1.25;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+		border-radius: 4px;
+		color: var(--prim-bcgd);
+		&::placeholder {
+			color: var(--contact);
+		}
+		@include mobile {
+			margin-top: 20px;
+		}
+		@include tablet {
+			max-width: 450px;
+		}
 	}
 
 	&__btn {
+		@extend %btn;
+		margin-top: 20px;
 	}
 
 	&__icon {
+		margin-left: 12px;
+		vertical-align: middle;
 	}
 }
