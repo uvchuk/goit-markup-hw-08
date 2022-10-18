@@ -2,23 +2,37 @@
 	&__container {
 		@extend %container;
 		@include mobile {
-			border-bottom: 1px solid var(--prim-border);
+			padding-top: 10px;
+			padding-bottom: 10px;
 		}
+
+		border-bottom: 1px solid var(--prim-border);
+
 		display: flex;
-		justify-content: space-between;
+		align-items: center;
+		@include mobile {
+			justify-content: space-between;
+		}
 	}
 
 	&__logo {
 		@extend %logo;
-		@include mobile {
-			padding-top: 16px;
-			padding-bottom: 16px;
+		@include tablet {
+			padding-top: 26px;
+			padding-bottom: 26px;
 		}
 	}
 
 	&__menu {
+		width: 100%;
 		@include mobile {
 			display: none;
+		}
+		@include tablet {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-left: 88px;
 		}
 
 		&.is-open {
@@ -50,7 +64,9 @@
 
 		&-icon-open {
 			@include mobile {
+				display: block;
 				padding: 12px 8px;
+				@include animated($property: fill);
 			}
 			.page-header__menu-btn:hover &,
 			.page-header__menu-btn:focus & {
@@ -62,6 +78,7 @@
 			@include mobile {
 				display: none;
 				padding: 11px 11px;
+				@include animated($property: fill);
 			}
 			.page-header__menu-btn:hover &,
 			.page-header__menu-btn:focus & {
@@ -93,19 +110,54 @@
 				gap: 32px;
 				margin-bottom: 32px;
 			}
+			@include tablet {
+				gap: 50px;
+			}
 		}
 
 		&-item {
+			font-weight: 500;
+			letter-spacing: 0.02em;
+
 			@include mobile {
-				font-weight: 500;
 				font-size: 40px;
-				line-height: 47px;
-				letter-spacing: 0.02em;
+				line-height: 1.18;
 			}
+			@include tablet {
+				position: relative;
+				line-height: 1.14;
+			}
+		}
+
+		&-link {
+			@include tablet {
+				display: inline-block;
+				padding-top: 32px;
+				padding-bottom: 32px;
+			}
+			&:hover,
+			&:focus {
+				color: var(--accent);
+			}
+			@include animated($property: color);
 		}
 
 		&-link.--current {
 			color: var(--accent);
+			@include tablet {
+				&::after {
+					content: "";
+
+					position: absolute;
+					bottom: -1px;
+					left: 0;
+					width: 100%;
+
+					border: 2px solid var(--accent);
+					border-radius: 2px;
+					background-color: var(--accent);
+				}
+			}
 		}
 
 		&-link:hover,
@@ -122,35 +174,59 @@
 				gap: 32px;
 				margin-top: auto;
 			}
+			@include tablet {
+				flex-direction: column;
+				gap: 10px;
+			}
+			@include desktop {
+				flex-direction: row;
+				gap: 30px;
+			}
 		}
 
 		&-item {
-			@include mobile {
-				font-weight: 500;
-				letter-spacing: 0.02em;
+			font-weight: 500;
+			letter-spacing: 0.02em;
+			line-height: 1.17;
 
+			color: var(--scnd-text);
+
+			@include mobile {
 				&:first-child {
 					font-size: 24px;
-					line-height: 1.17;
 					color: var(--scnd-text);
 				}
 
 				&:last-child {
 					font-size: 34px;
-					line-height: 1.18;
 					color: var(--accent);
 				}
+			}
+			@include tablet {
+				max-height: 14px;
+				font-size: 12px;
+			}
+			@include desktop {
+				font-size: 14px;
+				line-height: 1.14;
 			}
 		}
 
 		&-link {
+			@include tablet {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
 			&:hover,
 			&:focus {
 				color: var(--focus);
 			}
+			@include animated($property: color);
 		}
 
 		&-icon {
+			fill: currentColor;
 			@include mobile {
 				display: none;
 			}

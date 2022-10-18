@@ -1,11 +1,23 @@
 .page-footer {
 	@extend %section;
+	@include desktop {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
 	background-color: var(--footer-bcgd);
 
 	&__container {
 		@extend %container;
 		@include mobile {
 			text-align: center;
+		}
+		@include tablet {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		@include desktop {
+			justify-content: space-between;
 		}
 	}
 
@@ -18,10 +30,25 @@
 .address {
 	margin-top: 20px;
 
+	&__wrapper {
+		@include tablet {
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		@include desktop {
+			align-items: start;
+		}
+	}
+
 	&__list {
-		display: flex;
+		display: inline-flex;
 		flex-direction: column;
+		align-items: center;
 		gap: 8px;
+		@include desktop {
+			align-items: start;
+		}
 	}
 
 	&__item {
@@ -36,6 +63,7 @@
 		&:focus {
 			color: var(--accent);
 		}
+		@include animated($property: color);
 	}
 
 	&__contact {
@@ -44,12 +72,21 @@
 		&:focus {
 			color: var(--accent);
 		}
+		@include animated($property: color);
 	}
 }
 
 .connect {
 	@include mobile {
 		margin-top: 60px;
+	}
+	@include tablet {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	@include desktop {
+		align-items: flex-start;
 	}
 
 	&__title {
@@ -61,10 +98,16 @@
 	}
 
 	&__list {
-		margin-top: 20px;
-		display: flex;
 		justify-content: center;
 		gap: 10px;
+		margin-top: 20px;
+
+		@include mobile {
+			display: flex;
+		}
+		@include tablet {
+			display: inline-flex;
+		}
 	}
 
 	&__item {
@@ -80,6 +123,7 @@
 		&:focus {
 			background-color: var(--accent);
 		}
+		@include animated;
 	}
 
 	&__icon {
@@ -88,9 +132,18 @@
 	}
 }
 .contact {
+	margin-top: 60px;
+	text-align: center;
+
+	@include desktop {
+		margin: 0;
+		text-align: left;
+	}
+
 	&__form {
-		@include mobile {
-			margin-top: 60px;
+		@include desktop {
+			display: flex;
+			align-items: flex-end;
 		}
 	}
 
@@ -106,27 +159,34 @@
 		@extend %input-bcgd;
 		height: 50px;
 		width: 100%;
+		margin-top: 20px;
 		padding-left: 16px;
 		font-size: 16px;
 		line-height: 1.25;
+		outline: none;
 		border: 1px solid rgba(255, 255, 255, 0.3);
-		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 		border-radius: 4px;
-		color: var(--prim-bcgd);
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+		color: inherit;
+		&:hover,
+		&:focus {
+			border-color: var(--prim-bcgd);
+		}
 		&::placeholder {
 			color: var(--contact);
-		}
-		@include mobile {
-			margin-top: 20px;
 		}
 		@include tablet {
 			max-width: 450px;
 		}
+		@include animated($property: border);
 	}
 
 	&__btn {
 		@extend %btn;
 		margin-top: 20px;
+		@include desktop {
+			margin-left: 12px;
+		}
 	}
 
 	&__icon {

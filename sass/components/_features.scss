@@ -1,5 +1,6 @@
 .features {
 	@extend %section;
+	padding-bottom: 47px;
 	&__container {
 		@extend %container;
 	}
@@ -14,19 +15,26 @@
 		@include mobile {
 			flex-direction: column;
 		}
+		@include tablet {
+			flex-wrap: wrap;
+		}
 	}
 
 	&__item {
+		@include tablet {
+			max-width: 354px;
+		}
+		@include desktop {
+			max-width: 270px;
+		}
 	}
 
 	&__icon {
+		display: block;
+		width: 100%;
+		padding: 25px 0;
 		background-color: var(--scnd-bcgd);
 		border-radius: 4px;
-		@include mobile {
-			display: block;
-			width: 100%;
-			padding: 25px 0;
-		}
 	}
 
 	&__label {

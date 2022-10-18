@@ -20,6 +20,12 @@
 		@include mobile {
 			flex-direction: column;
 		}
+		@include tablet {
+			flex-wrap: wrap;
+		}
+		@include desktop {
+			margin-top: 50px;
+		}
 	}
 
 	&__item {
@@ -68,11 +74,13 @@
 			&:focus .teammates__soc-icon {
 				fill: var(--prim-bcgd);
 			}
+			@include animated();
 		}
 
 		&-icon {
 			display: block;
 			fill: var(--icon);
+			@include animated($property: fill);
 		}
 	}
 }

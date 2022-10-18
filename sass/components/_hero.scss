@@ -43,21 +43,23 @@
 		text-align: center;
 	}
 	&__title {
+		margin: 0 auto;
+		max-width: 360px;
 		font-weight: 900;
 		font-size: 26px;
 		line-height: 1.62;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 		color: var(--prim-bcgd);
+		@include desktop {
+			max-width: 696px;
+			font-size: 44px;
+			line-height: 1.36;
+		}
 	}
 
 	&__btn {
 		@extend %btn;
 		margin-top: 30px;
-
-		&:hover,
-		&:focus {
-			background-color: var(--focus);
-		}
 	}
 }

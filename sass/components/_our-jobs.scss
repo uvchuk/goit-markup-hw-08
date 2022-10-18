@@ -1,21 +1,45 @@
 .our-jobs {
-	@include mobile {
-		display: none;
+	display: none;
+	@extend %section;
+	padding-top: 47px;
+	@include desktop {
+		display: block;
 	}
 
 	&__container {
 		@extend %container;
+		text-align: center;
 	}
 
 	&__title {
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 1.17;
 	}
 
 	&__list {
+		margin-top: 50px;
+		display: flex;
+		gap: 30px;
 	}
 
 	&__item {
+		position: relative;
 	}
 
 	&__description {
+		position: absolute;
+		width: 100%;
+		padding-top: 27px;
+		padding-bottom: 27px;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		font-weight: 700;
+		line-height: 1.14;
+		text-align: center;
+		text-transform: uppercase;
+		color: var(--prim-bcgd);
+		background-color: var(--fifth-bcgd);
 	}
 }
