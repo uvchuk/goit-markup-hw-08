@@ -4,73 +4,100 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Portfolio</title>
+		<title>WebStudio</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
 			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
 		/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 		<link rel="stylesheet" href="./css/main.min.css" />
 	</head>
-	<body>
+	<body data-body-lock>
 		<!-- Header -->
 		<header class="page-header">
-			<div class="container page-header__container">
-				<nav class="page-header__nav">
-					<a href="./index.html" class="logo page-header__logo"><span class="logo-label">Web</span>Studio</a>
+			<div class="page-header__container">
+				<a href="./index.html" class="page-header__logo"><span class="logo-label">Web</span>Studio</a>
+				<nav class="page-header__menu" data-menu>
 					<ul class="page-header__nav-list">
 						<li class="page-header__nav-item">
 							<a href="./index.html" class="page-header__nav-link">Студія</a>
 						</li>
 						<li class="page-header__nav-item">
-							<a href="./portfolio.html" class="page-header__nav-link page-header__nav-link__current">Портфоліо</a>
+							<a href="./portfolio.html" class="page-header__nav-link --current">Портфоліо</a>
 						</li>
 						<li class="page-header__nav-item">
 							<a href="./test.html" class="page-header__nav-link">Контакти</a>
 						</li>
 					</ul>
+					<ul class="page-header__contact-list">
+						<li class="page-header__contact-item">
+							<a href="mailto:info@devstudio.com" class="page-header__contact-link">
+								<svg class="page-header__contact-icon" width="16" height="12"><use href="./images/icons.svg#icon-mail"></use></svg>
+								info@devstudio.com
+							</a>
+						</li>
+						<li class="page-header__contact-item">
+							<a href="tel:+380961111111" class="page-header__contact-link">
+								<svg class="page-header__contact-icon" width="10" height="16"><use href="./images/icons.svg#icon-tel"></use></svg>
+								+38 096 111 11 11
+							</a>
+						</li>
+					</ul>
+					<ul class="page-header__social-list">
+						<li class="page-header__social-item"><a href="#" class="page-header__social-link">Instagram</a></li>
+						<li class="page-header__social-item"><a href="#" class="page-header__social-link">Twitter</a></li>
+						<li class="page-header__social-item"><a href="#" class="page-header__social-link">Facebook</a></li>
+						<li class="page-header__social-item"><a href="#" class="page-header__social-link">LinkedIn</a></li>
+					</ul>
 				</nav>
-				<ul class="page-header__contact-list">
-					<li class="page-header__contact-item">
-						<a href="mailto:info@devstudio.com" class="page-header__contact-link">
-							<svg class="page-header__contact-icon" width="16" height="12"><use href="./images/icons.svg#icon-mail"></use></svg>
-							info@devstudio.com
-						</a>
-					</li>
-					<li class="contact-item">
-						<a href="tel:+380961111111" class="page-header__contact-link">
-							<svg class="page-header__contact-icon" width="10" height="16"><use href="./images/icons.svg#icon-tel"></use></svg>
-							+38 096 111 11 11
-						</a>
-					</li>
-				</ul>
+				<button class="page-header__menu-btn" type="button" data-menu-button>
+					<svg class="page-header__menu-icon-open" width="24" height="16">
+						<use href="./images/icons.svg#icon-menu_open"></use>
+					</svg>
+					<svg class="page-header__menu-icon-close" width="18" height="18">
+						<use href="./images/icons.svg#icon-menu_close"></use>
+					</svg>
+				</button>
 			</div>
 		</header>
 		<!-- Main content -->
 		<main>
 			<section class="projects">
 				<div class="projects__container">
-					<h1 class="projects__tittle visuality-hidden">Portfolio</h1>
+					<h1 class="projects__title">Portfolio</h1>
 					<ul class="projects__filter-list">
-						<li class="projects__filter-item"><button type="button" class="projects__btn-filter">Усі</button></li>
-						<li class="projects__filter-item"><button type="button" class="projects__btn-filter">Веб-сайти</button></li>
-						<li class="projects__filter-item"><button type="button" class="projects__btn-filter">Додатки</button></li>
-						<li class="projects__filter-item"><button type="button" class="projects__btn-filter">Дизайн</button></li>
-						<li class="projects__filter-item"><button type="button" class="projects__btn-filter">Маркетинг</button></li>
+						<li class="projects__filter-item"><button type="button" class="projects__filter-btn">Усі</button></li>
+						<li class="projects__filter-item"><button type="button" class="projects__filter-btn">Веб-сайти</button></li>
+						<li class="projects__filter-item"><button type="button" class="projects__filter-btn">Додатки</button></li>
+						<li class="projects__filter-item"><button type="button" class="projects__filter-btn">Дизайн</button></li>
+						<li class="projects__filter-item"><button type="button" class="projects__filter-btn">Маркетинг</button></li>
 					</ul>
 					<ul class="projects__list">
 						<li class="projects__item">
 							<a href="#" class="projects__link">
 								<div class="projects__thumb">
-									<img src="./images/portfolio1.jpg" alt="Технокряк" width="370" />
+									<picture>
+										<source
+											srcset="
+												./images/portfolio/portfolio-1w370.jpg 370w,
+												./images/portfolio/portfolio-1w450.jpg 450w,
+												./images/portfolio/portfolio-1w740.jpg 740w,
+												./images/portfolio/portfolio-1w900.jpg 900w
+											"
+											sizes="(min-width: 768px) 370px, (min-width: 450px) 450px, 100vw"
+											type="image/jpeg"
+										/>
+										<img src="./images/portfolio/portfolio-1w450.jpg" alt="Технокряк" />
+									</picture>
 									<p class="projects__overflow">
 										Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати
 										вичерпні відомості про компанію чи приватну особу.
 									</p>
 								</div>
 								<div class="projects__info">
-									<h2 class="projects__title">Технокряк</h2>
+									<h2 class="projects__name">Технокряк</h2>
 									<p class="projects__description">Веб-сайт</p>
 								</div>
 							</a>
@@ -78,14 +105,26 @@
 						<li class="projects__item">
 							<a href="#" class="projects__link">
 								<div class="projects__thumb">
-									<img src="./images/portfolio2.jpg" alt="Постер New Orlean vs Golden Star" width="370" />
+									<picture>
+										<source
+											srcset="
+												./images/portfolio/portfolio-2w370.jpg 370w,
+												./images/portfolio/portfolio-2w450.jpg 450w,
+												./images/portfolio/portfolio-2w740.jpg 740w,
+												./images/portfolio/portfolio-2w900.jpg 900w
+											"
+											sizes="(min-width: 768px) 370px, (min-width: 450px) 450px, 100vw"
+											type="image/jpeg"
+										/>
+										<img src="./images/portfolio/portfolio-2w450.jpg" alt="Постер New Orlean vs Golden Star" />
+									</picture>
 									<p class="projects__overflow">
 										Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати
 										вичерпні відомості про компанію чи приватну особу.
 									</p>
 								</div>
 								<div class="projects__info">
-									<h2 class="projects__title">Постер New Orlean vs Golden Star</h2>
+									<h2 class="projects__name">Постер New Orlean vs Golden Star</h2>
 									<p class="projects__description">Дизайн</p>
 								</div>
 							</a>
@@ -93,14 +132,26 @@
 						<li class="projects__item">
 							<a href="#" class="projects__link">
 								<div class="projects__thumb">
-									<img src="./images/portfolio3.jpg" alt="Ресторан Seafood" width="370" />
+									<picture>
+										<source
+											srcset="
+												./images/portfolio/portfolio-3w370.jpg 370w,
+												./images/portfolio/portfolio-3w450.jpg 450w,
+												./images/portfolio/portfolio-3w740.jpg 740w,
+												./images/portfolio/portfolio-3w900.jpg 900w
+											"
+											sizes="(min-width: 768px) 370px, (min-width: 450px) 450px, 100vw"
+											type="image/jpeg"
+										/>
+										<img src="./images/portfolio/portfolio-3w450.jpg" alt="Ресторан Seafood" />
+									</picture>
 									<p class="projects__overflow">
 										Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати
 										вичерпні відомості про компанію чи приватну особу.
 									</p>
 								</div>
 								<div class="projects__info">
-									<h2 class="projects__title">Ресторан Seafood</h2>
+									<h2 class="projects__name">Ресторан Seafood</h2>
 									<p class="projects__description">Додаток</p>
 								</div>
 							</a>
@@ -108,14 +159,26 @@
 						<li class="projects__item">
 							<a href="#" class="projects__link">
 								<div class="projects__thumb">
-									<img src="./images/portfolio4.jpg" alt="Проєкт Prime" width="370" />
+									<picture>
+										<source
+											srcset="
+												./images/portfolio/portfolio-4w370.jpg 370w,
+												./images/portfolio/portfolio-4w450.jpg 450w,
+												./images/portfolio/portfolio-4w740.jpg 740w,
+												./images/portfolio/portfolio-4w900.jpg 900w
+											"
+											sizes="(min-width: 768px) 370px, (min-width: 450px) 450px, 100vw"
+											type="image/jpeg"
+										/>
+										<img src="./images/portfolio/portfolio-4w450.jpg" alt="Проєкт Prime" />
+									</picture>
 									<p class="projects__overflow">
 										Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати
 										вичерпні відомості про компанію чи приватну особу.
 									</p>
 								</div>
 								<div class="projects__info">
-									<h2 class="projects__title">Проєкт Prime</h2>
+									<h2 class="projects__name">Проєкт Prime</h2>
 									<p class="projects__description">Маркетинг</p>
 								</div>
 							</a>
@@ -123,14 +186,26 @@
 						<li class="projects__item">
 							<a href="#" class="projects__link">
 								<div class="projects__thumb">
-									<img src="./images/portfolio5.jpg" alt="Проєкт Boxes" width="370" />
+									<picture>
+										<source
+											srcset="
+												./images/portfolio/portfolio-5w370.jpg 370w,
+												./images/portfolio/portfolio-5w450.jpg 450w,
+												./images/portfolio/portfolio-5w740.jpg 740w,
+												./images/portfolio/portfolio-5w900.jpg 900w
+											"
+											sizes="(min-width: 768px) 370px, (min-width: 450px) 450px, 100vw"
+											type="image/jpeg"
+										/>
+										<img src="./images/portfolio/portfolio-5w450.jpg" alt="Проєкт Boxes" />
+									</picture>
 									<p class="projects__overflow">
 										Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати
 										вичерпні відомості про компанію чи приватну особу.
 									</p>
 								</div>
 								<div class="projects__info">
-									<h2 class="projects__title">Проєкт Boxes</h2>
+									<h2 class="projects__name">Проєкт Boxes</h2>
 									<p class="projects__description">Додаток</p>
 								</div>
 							</a>
@@ -138,14 +213,26 @@
 						<li class="projects__item">
 							<a href="#" class="projects__link">
 								<div class="projects__thumb">
-									<img src="./images/portfolio6.jpg" alt="Inspiration has no Borders" width="370" />
+									<picture>
+										<source
+											srcset="
+												./images/portfolio/portfolio-6w370.jpg 370w,
+												./images/portfolio/portfolio-6w450.jpg 450w,
+												./images/portfolio/portfolio-6w740.jpg 740w,
+												./images/portfolio/portfolio-6w900.jpg 900w
+											"
+											sizes="(min-width: 768px) 370px, (min-width: 450px) 450px, 100vw"
+											type="image/jpeg"
+										/>
+										<img src="./images/portfolio/portfolio-6w450.jpg" alt="Inspiration has no Borders" />
+									</picture>
 									<p class="projects__overflow">
 										Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати
 										вичерпні відомості про компанію чи приватну особу.
 									</p>
 								</div>
 								<div class="projects__info">
-									<h2 class="projects__title">Inspiration has no Borders</h2>
+									<h2 class="projects__name">Inspiration has no Borders</h2>
 									<p class="projects__description">Веб-сайт</p>
 								</div>
 							</a>
@@ -153,14 +240,26 @@
 						<li class="projects__item">
 							<a href="#" class="projects__link">
 								<div class="projects__thumb">
-									<img src="./images/portfolio6.jpg" alt="Inspiration has no Borders" width="370" />
+									<picture>
+										<source
+											srcset="
+												./images/portfolio/portfolio-7w370.jpg 370w,
+												./images/portfolio/portfolio-7w450.jpg 450w,
+												./images/portfolio/portfolio-7w740.jpg 740w,
+												./images/portfolio/portfolio-7w900.jpg 900w
+											"
+											sizes="(min-width: 768px) 370px, (min-width: 450px) 450px, 100vw"
+											type="image/jpeg"
+										/>
+										<img src="./images/portfolio/portfolio-7w450.jpg" alt="Видання Limited Edition" />
+									</picture>
 									<p class="projects__overflow">
 										Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати
 										вичерпні відомості про компанію чи приватну особу.
 									</p>
 								</div>
 								<div class="projects__info">
-									<h2 class="projects__title">Inspiration has no Borders</h2>
+									<h2 class="projects__name">Видання Limited Edition</h2>
 									<p class="projects__description">Веб-сайт</p>
 								</div>
 							</a>
@@ -168,14 +267,26 @@
 						<li class="projects__item">
 							<a href="#" class="projects__link">
 								<div class="projects__thumb">
-									<img src="./images/portfolio8.jpg" alt="Проєкт LAB" width="370" />
+									<picture>
+										<source
+											srcset="
+												./images/portfolio/portfolio-8w370.jpg 370w,
+												./images/portfolio/portfolio-8w450.jpg 450w,
+												./images/portfolio/portfolio-8w740.jpg 740w,
+												./images/portfolio/portfolio-8w900.jpg 900w
+											"
+											sizes="(min-width: 768px) 370px, (min-width: 450px) 450px, 100vw"
+											type="image/jpeg"
+										/>
+										<img src="./images/portfolio/portfolio-8w450.jpg" alt="Проєкт LAB" />
+									</picture>
 									<p class="projects__overflow">
 										Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати
 										вичерпні відомості про компанію чи приватну особу.
 									</p>
 								</div>
 								<div class="projects__info">
-									<h2 class="projects__title">Проєкт LAB</h2>
+									<h2 class="projects__name">Проєкт LAB</h2>
 									<p class="projects__description">Маркетинг</p>
 								</div>
 							</a>
@@ -183,14 +294,26 @@
 						<li class="projects__item">
 							<a href="#" class="projects__link">
 								<div class="projects__thumb">
-									<img src="./images/portfolio9.jpg" alt="Growing Business" width="370" />
+									<picture>
+										<source
+											srcset="
+												./images/portfolio/portfolio-9w370.jpg 370w,
+												./images/portfolio/portfolio-9w450.jpg 450w,
+												./images/portfolio/portfolio-9w740.jpg 740w,
+												./images/portfolio/portfolio-9w900.jpg 900w
+											"
+											sizes="(min-width: 768px) 370px, (min-width: 450px) 450px, 100vw"
+											type="image/jpeg"
+										/>
+										<img src="./images/portfolio/portfolio-9w450.jpg" alt="Growing Business" />
+									</picture>
 									<p class="projects__overflow">
 										Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати
 										вичерпні відомості про компанію чи приватну особу.
 									</p>
 								</div>
 								<div class="projects__info">
-									<h2 class="projects__title">Growing Business</h2>
+									<h2 class="projects__name">Growing Business</h2>
 									<p class="projects__description">Додаток</p>
 								</div>
 							</a>
@@ -201,10 +324,10 @@
 		</main>
 		<!-- Footer -->
 		<footer class="page-footer">
-			<div class="container page-footer__container">
-				<div class="address">
-					<a href="./index.html" class="logo page-footer__logo"><span class="logo-label">Web</span>Studio</a>
-					<address class="address__wrapper">
+			<div class="page-footer__container">
+				<div class="address__wrapper">
+					<a href="./index.html" class="page-footer__logo"><span class="logo-label">Web</span>Studio</a>
+					<address class="address">
 						<ul class="address__list">
 							<li class="address__item">
 								<a href="https://goo.gl/maps/2UuTohdzLRWrKuVo7" class="address__link" target="_blank" rel="noopener noreferrer nofollow"
