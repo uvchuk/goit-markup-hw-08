@@ -6,10 +6,10 @@
 		max-width: 450px;
 	}
 	@include tablet {
-		max-width: 738px;
+		width: 738px;
 	}
 	@include desktop {
-		max-width: 1170px;
+		width: 1170px;
 	}
 }
 

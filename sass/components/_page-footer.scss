@@ -27,16 +27,10 @@
 		@extend %logo;
 		color: var(--prim-bcgd);
 	}
-
-	&__menu {
-	}
 }
 
 .address {
 	margin-top: 20px;
-
-	&__list {
-	}
 
 	&__item {
 		font-weight: 400;

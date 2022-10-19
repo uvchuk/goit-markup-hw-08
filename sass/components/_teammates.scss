@@ -32,6 +32,13 @@
 			&:not(:first-child) {
 				margin-top: 30px;
 			}
+			max-width: 450px;
+		}
+		@include tablet {
+			width: 354px;
+		}
+		@include desktop {
+			width: 270px;
 		}
 		@extend %team-bcgd;
 	}
