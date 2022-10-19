@@ -1,34 +1,38 @@
 .teammates {
-	@extend %section;
 	background-color: var(--scnd-bcgd);
 	&__container {
 		@extend %container;
-
+		@extend %section;
 		text-align: center;
 	}
 
 	&__title {
-		font-weight: 700;
-		font-size: 28px;
-		line-height: 1.18;
+		@extend %title;
 	}
 
 	&__list {
 		margin-top: 30px;
-		display: flex;
-		gap: 30px;
+
 		@include mobile {
-			flex-direction: column;
 		}
+
 		@include tablet {
+			display: flex;
 			flex-wrap: wrap;
+			gap: 30px;
 		}
+
 		@include desktop {
 			margin-top: 50px;
 		}
 	}
 
 	&__item {
+		@include mobile {
+			&:not(:first-child) {
+				margin-top: 30px;
+			}
+		}
 		@extend %team-bcgd;
 	}
 

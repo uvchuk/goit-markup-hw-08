@@ -1,12 +1,9 @@
 .page-footer {
-	@extend %section;
-	@include desktop {
-		padding-top: 60px;
-		padding-bottom: 60px;
-	}
 	background-color: var(--footer-bcgd);
 
 	&__container {
+		padding-top: 60px;
+		padding-bottom: 60px;
 		@extend %container;
 		@include mobile {
 			text-align: center;
@@ -14,10 +11,15 @@
 		@include tablet {
 			display: flex;
 			flex-wrap: wrap;
+		}
+
+		@include tabletMax {
 			justify-content: space-around;
+			text-align: center;
 		}
 		@include desktop {
 			justify-content: space-between;
+			align-items: baseline;
 		}
 	}
 
@@ -25,36 +27,24 @@
 		@extend %logo;
 		color: var(--prim-bcgd);
 	}
+
+	&__menu {
+	}
 }
 
 .address {
 	margin-top: 20px;
 
-	&__wrapper {
-		@include tablet {
-			display: inline-flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		@include desktop {
-			align-items: start;
-		}
-	}
-
 	&__list {
-		display: inline-flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 8px;
-		@include desktop {
-			align-items: start;
-		}
 	}
 
 	&__item {
 		font-weight: 400;
 		font-style: normal;
 		line-height: 1.71;
+		&:not(:first-child) {
+			margin-top: 8px;
+		}
 	}
 
 	&__link {
@@ -80,34 +70,19 @@
 	@include mobile {
 		margin-top: 60px;
 	}
-	@include tablet {
-		display: inline-flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	@include desktop {
-		align-items: flex-start;
-	}
 
 	&__title {
 		font-weight: 700;
 		line-height: 1.14;
-		letter-spacing: 0.03em;
 		text-transform: uppercase;
 		color: var(--prim-bcgd);
 	}
 
 	&__list {
+		display: flex;
 		justify-content: center;
 		gap: 10px;
 		margin-top: 20px;
-
-		@include mobile {
-			display: flex;
-		}
-		@include tablet {
-			display: inline-flex;
-		}
 	}
 
 	&__item {
@@ -132,12 +107,9 @@
 	}
 }
 .contact {
-	margin-top: 60px;
-	text-align: center;
-
-	@include desktop {
-		margin: 0;
-		text-align: left;
+	@include tabletMax {
+		margin-top: 60px;
+		text-align: center;
 	}
 
 	&__form {
@@ -148,10 +120,14 @@
 	}
 
 	&__label {
-		font-weight: 700;
-		line-height: 1.14;
-		letter-spacing: 0.03em;
-		text-transform: uppercase;
+		@extend %label;
+		@include tabletMax {
+			max-width: 450px;
+		}
+		@include desktop {
+			max-width: 360px;
+		}
+		display: block;
 		color: var(--prim-bcgd);
 	}
 
@@ -175,15 +151,16 @@
 		&::placeholder {
 			color: var(--contact);
 		}
-		@include tablet {
-			max-width: 450px;
-		}
+
 		@include animated($property: border);
 	}
 
 	&__btn {
+		padding: 10px 27px;
 		@extend %btn;
-		margin-top: 20px;
+		@include tabletMax {
+			margin-top: 20px;
+		}
 		@include desktop {
 			margin-left: 12px;
 		}

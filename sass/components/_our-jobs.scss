@@ -1,13 +1,12 @@
 .our-jobs {
 	display: none;
-	@extend %section;
-	padding-top: 47px;
 	@include desktop {
 		display: block;
 	}
 
 	&__container {
 		@extend %container;
+		padding-top: 47px;
 		text-align: center;
 	}
 

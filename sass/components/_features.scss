@@ -1,8 +1,7 @@
 .features {
-	@extend %section;
-	padding-bottom: 47px;
 	&__container {
 		@extend %container;
+		@extend %section;
 	}
 
 	&__tittle {
@@ -10,17 +9,19 @@
 	}
 
 	&__list {
-		display: flex;
-		gap: 30px;
-		@include mobile {
-			flex-direction: column;
-		}
 		@include tablet {
+			display: flex;
 			flex-wrap: wrap;
+			gap: 30px;
 		}
 	}
 
 	&__item {
+		@include mobile {
+			&:not(:first-child) {
+				margin-top: 30px;
+			}
+		}
 		@include tablet {
 			max-width: 354px;
 		}
@@ -31,17 +32,23 @@
 
 	&__icon {
 		display: block;
-		width: 100%;
-		padding: 25px 0;
 		background-color: var(--scnd-bcgd);
 		border-radius: 4px;
+		@include mobile {
+			padding: 25px 0;
+			width: 100%;
+		}
+		@include tablet {
+			padding: 25px 142px;
+		}
+		@include desktop {
+			padding: 25px 100px;
+		}
 	}
 
 	&__label {
+		@extend %label;
 		margin-top: 30px;
-		font-weight: 700;
-		line-height: 1.14;
-		text-transform: uppercase;
 		@include mobile {
 			text-align: center;
 		}

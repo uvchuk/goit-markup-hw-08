@@ -1,7 +1,7 @@
 .projects {
-	@extend %section;
 	&__container {
 		@extend %container;
+		@extend %section;
 	}
 
 	&__title {
@@ -51,18 +51,25 @@
 	}
 
 	&__item {
+		display: flex;
+		flex-direction: column;
+
 		@include mobile {
-			width: 100%;
-			max-width: 450px;
+			width: 450px;
 		}
 		@include tablet {
-			max-width: 354px;
+			width: 354px;
+		}
+		@include desktop {
+			width: 370px;
 		}
 	}
 
 	&__link {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 		position: relative;
-		display: block;
 		text-decoration: none;
 		transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 		&:hover,
@@ -72,6 +79,8 @@
 	}
 
 	&__info {
+		flex-grow: 1;
+
 		padding: 20px 24px;
 		border-right: 1px solid var(--scnd-border);
 		border-bottom: 1px solid var(--scnd-border);
@@ -103,7 +112,6 @@
 	}
 
 	&__overflow {
-		box-sizing: border-box;
 		position: absolute;
 		padding: 10% 24px;
 		max-width: 100%;
@@ -121,6 +129,12 @@
 		.projects__link:focus & {
 			visibility: inherit;
 			transform: translateY(0);
+			@include tablet {
+				padding: 50px 24px;
+			}
+			@include desktop {
+				padding: 63px 24px;
+			}
 		}
 	}
 }

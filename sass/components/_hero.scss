@@ -1,7 +1,5 @@
 .hero {
 	@include mobile {
-		padding-top: 118px;
-		padding-bottom: 118px;
 		background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
 			image-set(url("../images/hero/hero-mobile.webp") 1x, url("../images/hero/hero-mobile.jpg") 1x);
 		@include retina {
@@ -10,10 +8,8 @@
 		}
 	}
 	@include tablet {
-		max-width: 900px;
 		margin: 0 auto;
-		padding-top: 118px;
-		padding-bottom: 118px;
+		max-width: 900px;
 		background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
 			image-set(url("../images/hero/hero-tablet.webp") 1x, url("../images/hero/hero-tablet.jpg") 1x);
 		@include retina {
@@ -22,10 +18,8 @@
 		}
 	}
 	@include desktop {
-		max-width: 1600px;
 		margin: 0 auto;
-		padding-top: 200px;
-		padding-bottom: 200px;
+		max-width: 1600px;
 		background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
 			image-set(url("../images/hero/hero-desktop.webp") 1x, url("../images/hero/hero-desktop.jpg") 1x);
 		@include retina {
@@ -40,10 +34,22 @@
 
 	&__container {
 		@extend %container;
+		padding-top: 118px;
+		padding-bottom: 118px;
 		text-align: center;
+		@include tablet {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+		}
+		@include desktop {
+			padding-top: 200px;
+			padding-bottom: 200px;
+		}
 	}
 	&__title {
-		margin: 0 auto;
+		display: inline-block;
 		max-width: 360px;
 		font-weight: 900;
 		font-size: 26px;
@@ -60,6 +66,12 @@
 
 	&__btn {
 		@extend %btn;
-		margin-top: 30px;
+		padding: 10px 24px;
+		@include mobile {
+			margin-top: 30px;
+		}
+		@include desktop {
+			padding: 10px 32px;
+		}
 	}
 }
