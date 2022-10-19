@@ -14,7 +14,7 @@ body {
 
 @include mobile {
 	body {
-		&locked {
+		&.locked {
 			overflow: hidden;
 		}
 		&.adaptive {

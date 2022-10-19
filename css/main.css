@@ -146,7 +146,7 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-  bodylocked {
+  body.locked {
     overflow: hidden;
   }
   body.adaptive {
