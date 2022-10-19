@@ -590,7 +590,7 @@ a {
     color: var(--accent);
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
   .page-header__contact-item {
     font-size: 12px;
   }
@@ -629,7 +629,7 @@ a {
     display: none;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
   .page-header__contact-icon:first-child {
     width: 14px;
     height: 10px;
@@ -989,7 +989,7 @@ a {
           justify-content: center;
   gap: 30px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
   .clients__list {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1055,7 +1055,7 @@ a {
         flex-wrap: wrap;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
   .page-footer__container {
     -ms-flex-pack: distribute;
         justify-content: space-around;
@@ -1144,7 +1144,7 @@ a {
   fill: var(--prim-bcgd);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
   .contact {
     margin-top: 60px;
     text-align: center;
@@ -1164,7 +1164,7 @@ a {
   display: block;
   color: var(--prim-bcgd);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
   .contact__label {
     max-width: 450px;
   }
@@ -1211,7 +1211,7 @@ a {
 .contact__btn {
   padding: 10px 27px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
   .contact__btn {
     margin-top: 20px;
   }
